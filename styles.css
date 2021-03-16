@@ -1,0 +1,30 @@
+/* .container {
+    width: 500px;
+    height: 500px;
+} */
+
+#main-grid {
+    display: grid;
+    width: 500px;
+    height: 500px;
+}
+
+.cell {
+    border: 1px solid black;
+    min-width: 1px;
+    min-height: 1px;
+    /* display: inline-block; */
+    /* margin-right: 2px; */
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+.reset-btn {
+    width: 80px;
+    height: 40px;
+    padding-top: 20px;
+    background-color: aqua;
+    text-align: center;
+}
