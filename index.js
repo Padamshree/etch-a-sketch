@@ -30,17 +30,19 @@ reset = () => {
     let inputSize = prompt('Please Enter Grid Size (16-95)')
     let newGridSize = parseInt(inputSize, 10);
     if (newGridSize >=16 && newGridSize <= 95) {
-        // document.getElementsByClassName('cell').remove();
         for (i=0;i<(GRID_SIZE*GRID_SIZE); i++) {
             document.querySelector('.cell').remove();
         }
-        // resetState = Array.from(document.querySelectorAll('#main-grid div'))
-        // resetState.forEach(cell => {
-        //     cell.style.backgroundColor = "white";
-        // })
-        GRID_SIZE = newGridSize;
-        createGrid(GRID_SIZE);
+        createGrid(newGridSize);
     }
+}
+
+// Clear Grid
+clear = () => {
+    resetState = Array.from(document.querySelectorAll('#main-grid div'))
+    resetState.forEach(cell => {
+        cell.style.backgroundColor = "white";
+    })
 }
 
 // Color Away
@@ -55,3 +57,4 @@ document.getElementById('main-grid').addEventListener("mouseover", (e) => {
 });
 
 document.querySelector('.reset-btn').addEventListener('click', reset);
+document.querySelector('.clear-btn').addEventListener('click', clear);
