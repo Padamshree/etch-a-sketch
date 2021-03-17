@@ -25,21 +25,22 @@ createGrid = (gridSize) => {
 
 createGrid(GRID_SIZE);
 
-// Reset To Initial State
+// Reset and Change Size
 reset = () => {
-    let inputSize = prompt('Please Enter Grid Size (16-95)')
+    let inputSize = prompt('Please Enter Grid Size (16-95)');
     let newGridSize = parseInt(inputSize, 10);
     if (newGridSize >=16 && newGridSize <= 95) {
         for (i=0;i<(GRID_SIZE*GRID_SIZE); i++) {
             document.querySelector('.cell').remove();
         }
-        createGrid(newGridSize);
+        GRID_SIZE = newGridSize;
+        createGrid(GRID_SIZE);
     }
 }
 
 // Clear Grid
 clear = () => {
-    resetState = Array.from(document.querySelectorAll('#main-grid div'))
+    resetState = Array.from(document.querySelectorAll('#main-grid div'));
     resetState.forEach(cell => {
         cell.style.backgroundColor = "white";
     })
